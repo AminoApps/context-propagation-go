@@ -2,6 +2,7 @@ package context_propagation_gin
 
 import (
 	"fmt"
+	cpg "github.com/AminoApps/context-propagation-go"
 	"github.com/gin-gonic/gin"
 	"github.com/stretchr/testify/assert"
 	"net/http"
@@ -16,11 +17,11 @@ func TestMiddleware(t *testing.T) {
 	requestId := "123456"
 
 	e.GET("/test1", func(c *gin.Context) {
-		c.String(http.StatusOK, fmt.Sprintf("%v", c.Request.Context().Value("context-propagation-request-id")))
+		c.String(http.StatusOK, fmt.Sprintf("%v", cpg.GetValueFromContext(c.Request.Context(), "request-id")))
 	})
 
 	e.GET("/test2", func(c *gin.Context) {
-		c.String(http.StatusOK, fmt.Sprintf("%v", c.Value("context-propagation-request-id")))
+		c.String(http.StatusOK, fmt.Sprintf("%v", cpg.GetValueFromContext(c, "request-id")))
 	})
 
 	w1 := httptest.NewRecorder()

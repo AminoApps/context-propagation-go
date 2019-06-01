@@ -2,25 +2,19 @@ package context_propagation_go
 
 import (
 	"context"
-	"strings"
 )
 
-func getInternalKey(key string) string {
-	return strings.ToLower(InternalPrefix + key)
-}
-
-func GetValueFromContext(c context.Context, key string) *string {
+func GetValueFromContext(c context.Context, key string) string {
 	if c == nil {
-		return nil
+		return ""
 	}
 
-	val := c.Value(getInternalKey(key))
+	carrier := c.Value(InternalContextKey)
 
-	if tmp, ok := val.(string); ok {
-		return &tmp
+	if tmp, ok := carrier.(map[string]string); ok {
+		return tmp[key]
 	}
-
-	return nil
+	return ""
 }
 
 func SetValueToContext(c context.Context, key string, val string) context.Context {
@@ -28,5 +22,15 @@ func SetValueToContext(c context.Context, key string, val string) context.Contex
 		c = context.Background()
 	}
 
-	return context.WithValue(c, getInternalKey(key), val)
+	existCarrier := c.Value(InternalContextKey)
+	if tmp, ok := existCarrier.(map[string]string); ok {
+		carrier := make(map[string]string, len(tmp))
+		for k, v := range tmp {
+			carrier[k] = v
+		}
+		carrier[key] = val
+		return context.WithValue(c, InternalContextKey, carrier)
+	} else {
+		return context.WithValue(c, InternalContextKey, map[string]string{key: val})
+	}
 }

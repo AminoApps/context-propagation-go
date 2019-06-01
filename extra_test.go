@@ -15,7 +15,7 @@ func TestExtract(t *testing.T) {
 
 	assert.Equal(t, 1, len(result))
 	for k, v := range result {
-		assert.Equal(t, InternalPrefix+"request-id", k)
+		assert.Equal(t, "request-id", k)
 		assert.Equal(t, "123", v)
 	}
 }
