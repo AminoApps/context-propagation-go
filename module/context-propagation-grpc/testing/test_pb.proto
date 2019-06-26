@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package testing;
+
+service GrpcTest {
+    rpc GetRole (Msg) returns (Result) {
+    }
+}
+
+message Msg {
+}
+
+message Result {
+    string role = 1;
+}
