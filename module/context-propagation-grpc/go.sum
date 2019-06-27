@@ -1,10 +1,12 @@
 cloud.google.com/go v0.26.0/go.mod h1:aQUYkXzVsufM+DwF1aE+0xfcU+56JwCaLick0ClmMTw=
-github.com/AminoApps/context-propagation-go v0.0.0-20190627060808-54757e7a0104 h1:VKJp4INiGf74C6PU7CYYF7yMuWvQJf3Fsl7Etbq54g0=
-github.com/AminoApps/context-propagation-go v0.0.0-20190627060808-54757e7a0104/go.mod h1:s4zgXic3Oi/B5byLS20/F5U928QFQrWTGlt6sJts64k=
+github.com/AminoApps/context-propagation-go v0.0.0-20190627065752-6da2c7b31c36 h1:8MFi/9YVFz20kPSh+yYKla7nyPDAItt4TSLc7Talocw=
+github.com/AminoApps/context-propagation-go v0.0.0-20190627065752-6da2c7b31c36/go.mod h1:s4zgXic3Oi/B5byLS20/F5U928QFQrWTGlt6sJts64k=
 github.com/BurntSushi/toml v0.3.1/go.mod h1:xHWCNGjB5oqiDr8zfno3MHue2Ht5sIBksp03qcyfWMU=
 github.com/client9/misspell v0.3.4/go.mod h1:qj6jICC3Q7zFZvVWo7KLAzC3yx5G7kyvSDkc90ppPyw=
 github.com/davecgh/go-spew v1.1.0 h1:ZDRjVQ15GmhC3fiQ8ni8+OwkZQO4DARzQgrnXU1Liz8=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
+github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=
+github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/golang/glog v0.0.0-20160126235308-23def4e6c14b h1:VKtxabqXZkF25pY9ekfRL6a582T4P37/31XEstQ5p58=
 github.com/golang/glog v0.0.0-20160126235308-23def4e6c14b/go.mod h1:SBH7ygxi8pfUlaOkMMuAQtPIUF8ecWP5IEl/CR7VP2Q=
 github.com/golang/mock v1.1.1/go.mod h1:oTYuIxOrZwtPieC+H1uAHpcLFnEyAGVDL/k47Jfbm0A=

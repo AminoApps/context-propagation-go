@@ -1,7 +1,9 @@
-github.com/AminoApps/context-propagation-go v0.0.0-20190627060808-54757e7a0104 h1:VKJp4INiGf74C6PU7CYYF7yMuWvQJf3Fsl7Etbq54g0=
-github.com/AminoApps/context-propagation-go v0.0.0-20190627060808-54757e7a0104/go.mod h1:s4zgXic3Oi/B5byLS20/F5U928QFQrWTGlt6sJts64k=
+github.com/AminoApps/context-propagation-go v0.0.0-20190627065752-6da2c7b31c36 h1:8MFi/9YVFz20kPSh+yYKla7nyPDAItt4TSLc7Talocw=
+github.com/AminoApps/context-propagation-go v0.0.0-20190627065752-6da2c7b31c36/go.mod h1:s4zgXic3Oi/B5byLS20/F5U928QFQrWTGlt6sJts64k=
 github.com/davecgh/go-spew v1.1.0 h1:ZDRjVQ15GmhC3fiQ8ni8+OwkZQO4DARzQgrnXU1Liz8=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
+github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=
+github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/pmezard/go-difflib v1.0.0 h1:4DBwDE0NGyQoBHbLQYPwSUPoCMWR5BEzIk/f1lZbAQM=
 github.com/pmezard/go-difflib v1.0.0/go.mod h1:iKH77koFhYxTK1pcRnkKkqfTogsbg7gZNVY4sRDYZ/4=
 github.com/stretchr/objx v0.1.0/go.mod h1:HFkY916IF+rwdDfMAkV7OtwuqBVzrE8GR6GFx+wExME=
