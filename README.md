@@ -4,7 +4,7 @@ This middleware is used for support propagate context between micro services.
 
 For this version, we propagate context by [opentracing baggage](https://github.com/opentracing/specification/blob/master/specification.md) protocol.
 
-Supported framework:
+Supported framework for auto inject and extract:
 
 * [Gin](module/context-propagation-gin)
 * [Standard Http Client](module/context-propagation-http)
@@ -14,7 +14,9 @@ Supported framework:
 
 ## How to use
 
-### Get data from context
+### Operate data from context
+
+> Before get or set data from context, you should enable auto inject and extract.
 
 ```shell
 go get -u github.com/AminoApps/context-propagation-go
@@ -31,7 +33,9 @@ ctx = cpg.SetValueToContext(ctx, "my-key", "my-value")
 valye := cpg.GetValueFromContext(context.Background(), "my-key")
 ```
 
-### Gin
+### Auto inject and extract
+
+#### Gin
 
 ```shell
 go get -u github.com/AminoApps/context-propagation-go/module/context-propagation-gin
@@ -46,7 +50,7 @@ e := gin.New()
 e.Use(cpgin.Middleware())
 ```
 
-### Http Client
+#### Http Client
 
 ```shell
 go get -u github.com/AminoApps/context-propagation-go/module/context-propagation-http
@@ -63,7 +67,7 @@ client := cphttp.WrapClient(&http.Client{})
 resp, err := ctxhttp.Get(ctx, client, "http://test.com")
 ```
 
-### Grpc Client/Server
+#### Grpc Client/Server
 
 ```shell
 go get -u github.com/AminoApps/context-propagation-go/module/context-propagation-grpc
