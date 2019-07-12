@@ -32,7 +32,7 @@ func SetValueToContext(c context.Context, key string, val string) context.Contex
 		}
 		carrier[key] = val
 		return context.WithValue(c, InternalContextKey{}, carrier)
-	} else {
-		return context.WithValue(c, InternalContextKey{}, map[string]string{key: val})
 	}
+
+	return context.WithValue(c, InternalContextKey{}, map[string]string{key: val})
 }
