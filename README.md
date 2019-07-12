@@ -7,6 +7,7 @@ For this version, we propagate context by [opentracing baggage](https://github.c
 Supported framework for auto inject and extract:
 
 * [Gin](module/context-propagation-gin)
+* [Standard Http Server](module/context-propagation-http)
 * [Standard Http Client](module/context-propagation-http)
 * [gRPC Server](module/context-propagation-grpc)
 * [gRPC Client](module/context-propagation-grpc)
