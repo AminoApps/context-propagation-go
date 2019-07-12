@@ -6,7 +6,7 @@ import (
 	"net/http"
 )
 
-//Wrap http.Handler
+//Wrap Wrap for http.Handler
 func Wrap(h http.Handler) http.Handler {
 	if h == nil {
 		panic("h == nil")

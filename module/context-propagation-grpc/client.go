@@ -8,7 +8,7 @@ import (
 	"google.golang.org/grpc/metadata"
 )
 
-//NewUnaryClientInterceptor wrap for grpc client
+//NewUnaryClientInterceptor Wrap for grpc client
 func NewUnaryClientInterceptor() grpc.UnaryClientInterceptor {
 	return func(
 		ctx context.Context,

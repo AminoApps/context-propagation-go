@@ -4,6 +4,7 @@ import (
 	"context"
 )
 
+//GetValueFromContext Get context
 func GetValueFromContext(c context.Context, key string) string {
 	if c == nil {
 		return ""
@@ -17,6 +18,7 @@ func GetValueFromContext(c context.Context, key string) string {
 	return ""
 }
 
+//SetValueToContext Set context
 func SetValueToContext(c context.Context, key string, val string) context.Context {
 	if c == nil {
 		c = context.Background()

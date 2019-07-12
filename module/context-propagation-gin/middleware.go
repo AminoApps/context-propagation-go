@@ -6,7 +6,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-//Middleware for gin
+//Middleware For gin
 func Middleware() gin.HandlerFunc {
 	return handler
 }

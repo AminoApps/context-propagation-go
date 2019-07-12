@@ -1,5 +1,6 @@
 package cp
 
+//Inject
 func Inject(carrier interface{}) map[string]string {
 	// todo: config propagation by environment variables
 

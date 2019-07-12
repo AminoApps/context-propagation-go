@@ -2,6 +2,7 @@ package cp
 
 import "strings"
 
+//Extract
 func Extract(carrier map[string]string) map[string]string {
 	// todo: config propagation by environment variables
 

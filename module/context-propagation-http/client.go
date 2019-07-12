@@ -5,7 +5,7 @@ import (
 	"net/http"
 )
 
-//WrapClient wrap http.Client
+//WrapClient Wrap http.Client
 func WrapClient(c *http.Client) *http.Client {
 	if c == nil {
 		c = http.DefaultClient
@@ -17,7 +17,7 @@ func WrapClient(c *http.Client) *http.Client {
 	return &copied
 }
 
-//WrapRoundTripper wrap http.RoundTripper
+//WrapRoundTripper Wrap http.RoundTripper
 func WrapRoundTripper(r http.RoundTripper) http.RoundTripper {
 	if r == nil {
 		r = http.DefaultTransport
