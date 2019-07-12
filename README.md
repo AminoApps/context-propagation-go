@@ -52,6 +52,11 @@ import "github.com/AminoApps/context-propagation-go/module/context-propagation-g
 
 e := gin.New()
 e.Use(cpgin.Middleware())
+
+// For propagation context from gin, please use the context from the request
+func TestApi(c *gin.Context) {
+	GetDataFromDataBase(c.Request.Context())
+}
 ```
 
 #### Http Client/Server
