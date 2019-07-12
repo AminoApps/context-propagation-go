@@ -2,7 +2,7 @@ package cp
 
 import "strings"
 
-//Extract
+//Extract Convert external context to internal context
 func Extract(carrier map[string]string) map[string]string {
 	// todo: config propagation by environment variables
 
