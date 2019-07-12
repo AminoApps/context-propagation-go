@@ -11,12 +11,16 @@ func WrapClient(c *http.Client) *http.Client {
 	}
 	copied := *c
 
-	if copied.Transport == nil {
-		copied.Transport = &roundTripper{rt: http.DefaultTransport}
-	} else {
-		copied.Transport = &roundTripper{rt: copied.Transport}
-	}
+	copied.Transport = WrapRoundTripper(copied.Transport)
+
 	return &copied
+}
+
+func WrapRoundTripper(r http.RoundTripper) http.RoundTripper {
+	if r == nil {
+		r = http.DefaultTransport
+	}
+	return &roundTripper{rt: r}
 }
 
 type roundTripper struct {

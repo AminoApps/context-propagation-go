@@ -12,11 +12,10 @@ import (
 
 func TestClient(t *testing.T) {
 	mux := http.NewServeMux()
-	mux.Handle("/test", http.HandlerFunc(func(w http.ResponseWriter, req *http.Request) {
+	mux.Handle("/test", Wrap(http.HandlerFunc(func(w http.ResponseWriter, req *http.Request) {
 		w.WriteHeader(http.StatusOK)
-		requestId := req.Header.Get("baggage-request-id")
-		_, _ = w.Write([]byte(requestId))
-	}))
+		_, _ = w.Write([]byte(cpg.GetValueFromContext(req.Context(), "request-id")))
+	})))
 	server := httptest.NewServer(mux)
 	defer server.Close()
 

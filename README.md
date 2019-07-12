@@ -50,7 +50,7 @@ e := gin.New()
 e.Use(cpgin.Middleware())
 ```
 
-#### Http Client
+#### Http Client/Server
 
 ```shell
 go get -u github.com/AminoApps/context-propagation-go/module/context-propagation-http
@@ -61,10 +61,12 @@ package main
 
 import cphttp "github.com/AminoApps/context-propagation-go/module/context-propagation-http"
 
+http.ListenAndServe(":8080", cphttp.Wrap(myHandler))
+
 client := cphttp.WrapClient(&http.Client{})
 
 // Please use the ctxhttp to wrap the request.
-resp, err := ctxhttp.Get(ctx, client, "http://test.com")
+resp, err := ctxhttp.Get(ctx, client, "http://127.0.0.1:8080/test")
 ```
 
 #### Grpc Client/Server
