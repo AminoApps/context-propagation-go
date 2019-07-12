@@ -14,7 +14,7 @@ func TestMiddleware(t *testing.T) {
 	e := gin.New()
 	e.Use(Middleware())
 
-	requestId := "123456"
+	requestID := "123456"
 
 	e.GET("/test1", func(c *gin.Context) {
 		c.String(http.StatusOK, fmt.Sprintf("%v", cp.GetValueFromContext(c.Request.Context(), "request-id")))
@@ -27,12 +27,12 @@ func TestMiddleware(t *testing.T) {
 	w1 := httptest.NewRecorder()
 	w2 := httptest.NewRecorder()
 	req, _ := http.NewRequest("GET", "http://aminoapps.com/test1", nil)
-	req.Header.Set("baggage-request-id", requestId)
+	req.Header.Set("baggage-request-id", requestID)
 	req.Header.Set("baggage-other-baggage", "dozer")
 
 	e.ServeHTTP(w1, req)
 	e.ServeHTTP(w2, req)
 
-	assert.Equal(t, requestId, w1.Body.String())
-	assert.Equal(t, requestId, w2.Body.String())
+	assert.Equal(t, requestID, w1.Body.String())
+	assert.Equal(t, requestID, w2.Body.String())
 }
