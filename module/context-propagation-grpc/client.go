@@ -17,7 +17,7 @@ func NewUnaryClientInterceptor() grpc.UnaryClientInterceptor {
 		invoker grpc.UnaryInvoker,
 		opts ...grpc.CallOption,
 	) error {
-		carrier := ctx.Value(cpg.InternalContextKey)
+		carrier := ctx.Value(cpg.InternalContextKey{})
 		headers := cpg.Inject(carrier)
 
 		md, ok := metadata.FromOutgoingContext(ctx)

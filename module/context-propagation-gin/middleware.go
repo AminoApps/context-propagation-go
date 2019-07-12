@@ -21,8 +21,7 @@ func handler(c *gin.Context) {
 
 	carrier := cpg.Extract(headersWithFirst)
 	if len(carrier) > 0 {
-		c.Set(cpg.InternalContextKey, carrier)
-		c.Request = c.Request.WithContext(context.WithValue(c.Request.Context(), cpg.InternalContextKey, carrier))
+		c.Request = c.Request.WithContext(context.WithValue(c.Request.Context(), cpg.InternalContextKey{}, carrier))
 	}
 
 	c.Next()

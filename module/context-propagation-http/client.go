@@ -28,7 +28,7 @@ type roundTripper struct {
 }
 
 func (s *roundTripper) RoundTrip(r *http.Request) (*http.Response, error) {
-	carrier := r.Context().Value(cpg.InternalContextKey)
+	carrier := r.Context().Value(cpg.InternalContextKey{})
 	headers := cpg.Inject(carrier)
 
 	for k, v := range headers {

@@ -27,7 +27,7 @@ func NewUnaryServerInterceptor() grpc.UnaryServerInterceptor {
 
 			carrier := cpg.Extract(headersWithFirst)
 			if len(carrier) > 0 {
-				ctx = context.WithValue(ctx, cpg.InternalContextKey, carrier)
+				ctx = context.WithValue(ctx, cpg.InternalContextKey{}, carrier)
 			}
 
 		}

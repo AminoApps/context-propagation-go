@@ -31,7 +31,7 @@ func (h *handler) ServeHTTP(w http.ResponseWriter, req *http.Request) {
 
 	carrier := cpg.Extract(headersWithFirst)
 	if len(carrier) > 0 {
-		req = req.WithContext(context.WithValue(req.Context(), cpg.InternalContextKey, carrier))
+		req = req.WithContext(context.WithValue(req.Context(), cpg.InternalContextKey{}, carrier))
 	}
 
 	h.handler.ServeHTTP(w, req)

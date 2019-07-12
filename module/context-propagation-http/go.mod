@@ -3,8 +3,7 @@ module github.com/AminoApps/context-propagation-go/module/context-propagation-ht
 go 1.12
 
 require (
-	github.com/AminoApps/context-propagation-go v0.0.0-20190627065752-6da2c7b31c36
-	github.com/davecgh/go-spew v1.1.1 // indirect
+	github.com/AminoApps/context-propagation-go v0.0.0-20190712093550-b461a62a3c33
 	github.com/stretchr/testify v1.3.0
-	golang.org/x/net v0.0.0-20190522155817-f3200d17e092
+	golang.org/x/net v0.0.0-20190628185345-da137c7871d7
 )
