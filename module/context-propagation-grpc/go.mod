@@ -3,7 +3,7 @@ module github.com/AminoApps/context-propagation-go/module/context-propagation-gr
 go 1.12
 
 require (
-	github.com/AminoApps/context-propagation-go v0.0.0-20190712093550-b461a62a3c33
+	github.com/AminoApps/context-propagation-go v1.0.0
 	github.com/golang/protobuf v1.3.2
 	github.com/opentracing-contrib/go-grpc v0.0.0-20180928155321-4b5a12d3ff02
 	github.com/opentracing/opentracing-go v1.1.0 // indirect
