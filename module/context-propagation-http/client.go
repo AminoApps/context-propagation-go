@@ -1,7 +1,7 @@
-package context_propagation_http
+package cphttp
 
 import (
-	cpg "github.com/AminoApps/context-propagation-go"
+	"github.com/AminoApps/context-propagation-go"
 	"net/http"
 )
 
@@ -28,8 +28,8 @@ type roundTripper struct {
 }
 
 func (s *roundTripper) RoundTrip(r *http.Request) (*http.Response, error) {
-	carrier := r.Context().Value(cpg.InternalContextKey{})
-	headers := cpg.Inject(carrier)
+	carrier := r.Context().Value(cp.InternalContextKey{})
+	headers := cp.Inject(carrier)
 
 	for k, v := range headers {
 		r.Header.Set(k, v)

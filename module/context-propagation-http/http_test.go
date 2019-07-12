@@ -1,7 +1,7 @@
-package context_propagation_http
+package cphttp
 
 import (
-	cpg "github.com/AminoApps/context-propagation-go"
+	"github.com/AminoApps/context-propagation-go"
 	"github.com/stretchr/testify/assert"
 	"golang.org/x/net/context/ctxhttp"
 	"io/ioutil"
@@ -14,13 +14,13 @@ func TestClient(t *testing.T) {
 	mux := http.NewServeMux()
 	mux.Handle("/test", Wrap(http.HandlerFunc(func(w http.ResponseWriter, req *http.Request) {
 		w.WriteHeader(http.StatusOK)
-		_, _ = w.Write([]byte(cpg.GetValueFromContext(req.Context(), "request-id")))
+		_, _ = w.Write([]byte(cp.GetValueFromContext(req.Context(), "request-id")))
 	})))
 	server := httptest.NewServer(mux)
 	defer server.Close()
 
 	client := WrapClient(&http.Client{})
-	ctx := cpg.SetValueToContext(nil, "request-id", "123")
+	ctx := cp.SetValueToContext(nil, "request-id", "123")
 
 	resp, err := ctxhttp.Get(ctx, client, server.URL+"/test")
 	assert.Nil(t, err)

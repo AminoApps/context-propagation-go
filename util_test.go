@@ -1,4 +1,4 @@
-package context_propagation_go
+package cp
 
 import (
 	"context"

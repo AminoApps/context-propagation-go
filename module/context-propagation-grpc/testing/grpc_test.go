@@ -2,8 +2,8 @@ package testing
 
 import (
 	"context"
-	cpg "github.com/AminoApps/context-propagation-go"
-	cpgrpc "github.com/AminoApps/context-propagation-go/module/context-propagation-grpc"
+	"github.com/AminoApps/context-propagation-go"
+	"github.com/AminoApps/context-propagation-go/module/context-propagation-grpc"
 	_ "github.com/opentracing-contrib/go-grpc"
 	"github.com/stretchr/testify/assert"
 	"google.golang.org/grpc"
@@ -15,7 +15,7 @@ type grpcTestServer struct {
 }
 
 func (s *grpcTestServer) GetRole(ctx context.Context, msg *Msg) (*Result, error) {
-	return &Result{Role: cpg.GetValueFromContext(ctx, "auth-role")}, nil
+	return &Result{Role: cp.GetValueFromContext(ctx, "auth-role")}, nil
 }
 
 func TestGrpc(t *testing.T) {
@@ -34,7 +34,7 @@ func TestGrpc(t *testing.T) {
 
 	client := NewGrpcTestClient(conn)
 	ctx := context.Background()
-	ctx = cpg.SetValueToContext(ctx, "auth-role", "1")
+	ctx = cp.SetValueToContext(ctx, "auth-role", "1")
 	result, err := client.GetRole(ctx, &Msg{})
 	assert.Nil(t, err)
 

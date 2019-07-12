@@ -7,3 +7,5 @@ require (
 	github.com/gin-gonic/gin v1.4.0
 	github.com/stretchr/testify v1.3.0
 )
+
+replace github.com/AminoApps/context-propagation-go => ../..

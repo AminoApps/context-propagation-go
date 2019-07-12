@@ -1,7 +1,7 @@
-package context_propagation_grpc
+package cpgrpc
 
 import (
-	cpg "github.com/AminoApps/context-propagation-go"
+	"github.com/AminoApps/context-propagation-go"
 
 	"golang.org/x/net/context"
 	"google.golang.org/grpc"
@@ -17,8 +17,8 @@ func NewUnaryClientInterceptor() grpc.UnaryClientInterceptor {
 		invoker grpc.UnaryInvoker,
 		opts ...grpc.CallOption,
 	) error {
-		carrier := ctx.Value(cpg.InternalContextKey{})
-		headers := cpg.Inject(carrier)
+		carrier := ctx.Value(cp.InternalContextKey{})
+		headers := cp.Inject(carrier)
 
 		md, ok := metadata.FromOutgoingContext(ctx)
 

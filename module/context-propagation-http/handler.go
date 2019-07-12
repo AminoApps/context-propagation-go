@@ -1,8 +1,8 @@
-package context_propagation_http
+package cphttp
 
 import (
 	"context"
-	cpg "github.com/AminoApps/context-propagation-go"
+	"github.com/AminoApps/context-propagation-go"
 	"net/http"
 )
 
@@ -29,9 +29,9 @@ func (h *handler) ServeHTTP(w http.ResponseWriter, req *http.Request) {
 		}
 	}
 
-	carrier := cpg.Extract(headersWithFirst)
+	carrier := cp.Extract(headersWithFirst)
 	if len(carrier) > 0 {
-		req = req.WithContext(context.WithValue(req.Context(), cpg.InternalContextKey{}, carrier))
+		req = req.WithContext(context.WithValue(req.Context(), cp.InternalContextKey{}, carrier))
 	}
 
 	h.handler.ServeHTTP(w, req)

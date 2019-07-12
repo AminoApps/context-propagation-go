@@ -1,7 +1,7 @@
-package context_propagation_grpc
+package cpgrpc
 
 import (
-	cpg "github.com/AminoApps/context-propagation-go"
+	"github.com/AminoApps/context-propagation-go"
 
 	"golang.org/x/net/context"
 	"google.golang.org/grpc"
@@ -25,9 +25,9 @@ func NewUnaryServerInterceptor() grpc.UnaryServerInterceptor {
 				}
 			}
 
-			carrier := cpg.Extract(headersWithFirst)
+			carrier := cp.Extract(headersWithFirst)
 			if len(carrier) > 0 {
-				ctx = context.WithValue(ctx, cpg.InternalContextKey{}, carrier)
+				ctx = context.WithValue(ctx, cp.InternalContextKey{}, carrier)
 			}
 
 		}

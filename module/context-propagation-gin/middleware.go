@@ -1,8 +1,8 @@
-package context_propagation_gin
+package cpgin
 
 import (
 	"context"
-	cpg "github.com/AminoApps/context-propagation-go"
+	"github.com/AminoApps/context-propagation-go"
 	"github.com/gin-gonic/gin"
 )
 
@@ -19,9 +19,9 @@ func handler(c *gin.Context) {
 		}
 	}
 
-	carrier := cpg.Extract(headersWithFirst)
+	carrier := cp.Extract(headersWithFirst)
 	if len(carrier) > 0 {
-		c.Request = c.Request.WithContext(context.WithValue(c.Request.Context(), cpg.InternalContextKey{}, carrier))
+		c.Request = c.Request.WithContext(context.WithValue(c.Request.Context(), cp.InternalContextKey{}, carrier))
 	}
 
 	c.Next()
