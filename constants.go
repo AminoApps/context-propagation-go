@@ -1,6 +1,7 @@
 package context_propagation_go
 
+type InternalContextKey struct{}
+
 const (
-	BaggagePrefix      = "baggage-"
-	InternalContextKey = "context-propagation-map"
+	BaggagePrefix = "baggage-"
 )
