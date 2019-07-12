@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/AminoApps/context-propagation-go.svg?branch=master)](https://travis-ci.org/AminoApps/context-propagation-go)
+[![Go Report Card](https://goreportcard.com/badge/github.com/AminoApps/context-propagation-go)](https://goreportcard.com/report/github.com/AminoApps/context-propagation-go)
+
 # Context Propagation Go
 
 This middleware is used for support propagate context between micro services.
