@@ -1,5 +1,3 @@
-github.com/AminoApps/context-propagation-go v0.0.0-20190712093550-b461a62a3c33 h1:u7XKQNq4Gd+Jqwta218hVRKv8uM9zNsaXil6IEw3TLE=
-github.com/AminoApps/context-propagation-go v0.0.0-20190712093550-b461a62a3c33/go.mod h1:s4zgXic3Oi/B5byLS20/F5U928QFQrWTGlt6sJts64k=
 github.com/davecgh/go-spew v1.1.0 h1:ZDRjVQ15GmhC3fiQ8ni8+OwkZQO4DARzQgrnXU1Liz8=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/pmezard/go-difflib v1.0.0 h1:4DBwDE0NGyQoBHbLQYPwSUPoCMWR5BEzIk/f1lZbAQM=

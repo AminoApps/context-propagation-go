@@ -1,6 +1,6 @@
 module github.com/AminoApps/context-propagation-go/module/context-propagation-gin
 
-go 1.12
+go 1.13
 
 require (
 	github.com/AminoApps/context-propagation-go v1.0.0
