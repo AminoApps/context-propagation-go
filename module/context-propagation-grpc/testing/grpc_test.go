@@ -9,6 +9,7 @@ import (
 	"google.golang.org/grpc"
 	"net"
 	"testing"
+	"time"
 )
 
 type grpcTestServer struct {
@@ -27,6 +28,8 @@ func TestGrpc(t *testing.T) {
 		err = grpcServer.Serve(lis)
 		assert.Nil(t, err)
 	}()
+
+	time.Sleep(time.Second)
 
 	conn, err := grpc.Dial("127.0.0.1:19080", grpc.WithInsecure(), grpc.WithUnaryInterceptor(cpgrpc.NewUnaryClientInterceptor()))
 	assert.Nil(t, err)
