@@ -29,7 +29,7 @@ go get -u github.com/AminoApps/context-propagation-go
 ```go
 package main
 
-import "github.com/AminoApps/context-propagation-go"
+import cp "github.com/AminoApps/context-propagation-go"
 
 
 ctx = cp.SetValueToContext(ctx, "my-key", "my-value")
@@ -48,7 +48,7 @@ go get -u github.com/AminoApps/context-propagation-go/module/context-propagation
 ```go
 package main 
 
-import "github.com/AminoApps/context-propagation-go/module/context-propagation-gin"
+import cpgin "github.com/AminoApps/context-propagation-go/module/context-propagation-gin"
 
 e := gin.New()
 e.Use(cpgin.Middleware())
@@ -68,7 +68,7 @@ go get -u github.com/AminoApps/context-propagation-go/module/context-propagation
 ```go
 package main
 
-import "github.com/AminoApps/context-propagation-go/module/context-propagation-http"
+import cphttp "github.com/AminoApps/context-propagation-go/module/context-propagation-http"
 
 http.ListenAndServe(":8080", cphttp.Wrap(myHandler))
 
@@ -87,7 +87,7 @@ go get -u github.com/AminoApps/context-propagation-go/module/context-propagation
 ```go
 package main
 
-import "github.com/AminoApps/context-propagation-go/module/context-propagation-grpc"
+import cpgrpc "github.com/AminoApps/context-propagation-go/module/context-propagation-grpc"
 
 server := grpc.NewServer(grpc.UnaryInterceptor(cpgrpc.NewUnaryServerInterceptor()))
 
