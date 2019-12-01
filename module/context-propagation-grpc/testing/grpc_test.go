@@ -21,7 +21,7 @@ func (s *grpcTestServer) GetRole(ctx context.Context, msg *Msg) (*Result, error)
 
 func TestGrpc(t *testing.T) {
 	go func() {
-		lis, err := net.Listen("tcp", ":19080")
+		lis, err := net.Listen("tcp", ":9080")
 		assert.Nil(t, err)
 		grpcServer := grpc.NewServer(grpc.UnaryInterceptor(cpgrpc.NewUnaryServerInterceptor()))
 		RegisterGrpcTestServer(grpcServer, &grpcTestServer{})
@@ -31,7 +31,7 @@ func TestGrpc(t *testing.T) {
 
 	time.Sleep(time.Second)
 
-	conn, err := grpc.Dial("127.0.0.1:19080", grpc.WithInsecure(), grpc.WithUnaryInterceptor(cpgrpc.NewUnaryClientInterceptor()))
+	conn, err := grpc.Dial("127.0.0.1:9080", grpc.WithInsecure(), grpc.WithUnaryInterceptor(cpgrpc.NewUnaryClientInterceptor()))
 	assert.Nil(t, err)
 	defer conn.Close()
 
